@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @retire.user %>
+</p>
+
+<p>
+  <strong>Telephone:</strong>
+  <%= @retire.telephone %>
+</p>
+
+<%= link_to 'Edit', edit_retire_path(@retire) %> |
+<%= link_to 'Back', retires_path %>

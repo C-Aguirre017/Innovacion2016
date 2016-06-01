@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>App</title>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body  class="container" data-spy="scroll" data-offset="0">
+
+    <%= render 'shared/header' %>
+
+    <div class="col-md-10 col-md-offset-1 body-container">
+      <section class="content-header">
+        <h1><%= yield :header %></h1>
+      </section>
+
+      <section class="content">
+        <%= yield :content %>
+      </section>
+    </div>
+
+    <%= render 'shared/footer' %>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  retire_id: 
+  is_valid: false
+  read: false
+
+two:
+  user_id: 
+  retire_id: 
+  is_valid: false
+  read: false

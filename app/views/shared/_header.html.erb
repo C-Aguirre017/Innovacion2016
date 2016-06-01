@@ -1,0 +1,42 @@
+<header id="header" class="header" role="banner">
+  <div class="container">
+    <div class="navbar navbar-default">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <%= link_to image_tag("logo.png", border: 0), root_path , class: 'navbar-brand'%>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active">
+            <%= link_to "", home_path, class:"glyphicon glyphicon-home" %>
+          </li>
+          <li>
+            <a href="#">Personas</a>
+          </li>
+          <li>
+            <%= link_to "Quienes Somos?", quienes_somos_path %>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </li>
+
+          <% if user_signed_in? %>
+            <li><%= link_to "Cerrar Sesión", destroy_user_session_path, :method => :delete ,class: "pull-right"%></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
