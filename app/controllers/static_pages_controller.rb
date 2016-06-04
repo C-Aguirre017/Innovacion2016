@@ -5,4 +5,8 @@ class StaticPagesController < ApplicationController
 
   def who
   end
+
+  def search
+    @users = User.limit(10)
+  end
 end

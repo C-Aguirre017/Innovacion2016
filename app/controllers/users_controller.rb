@@ -10,6 +10,14 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def show
+  end
+
+  def find_file
+    query = params[:query].downcase
+    @users = User.where('lower(name) LIKE ? OR lower("lastName") LIKE ? OR lower("linkedin") LIKE ?', "%#{query}%", "%#{query}%", "%#{query}%")
+    render json: @users.to_json(only: [:id, :name, :lastName, :linkedin])
+  end
 
   def create
     aaa
