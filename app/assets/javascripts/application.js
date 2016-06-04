@@ -11,6 +11,11 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.inputmask
+//= require jquery.inputmask.extensions
+//= require jquery.inputmask.numeric.extensions
+//= require jquery.inputmask.date.extensions
+//= require moment
 //= require bootstrap-datetimepicker
 //= require bootstrap-sprockets
 //= require jquery_ujs
