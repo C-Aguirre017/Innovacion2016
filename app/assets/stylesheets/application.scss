@@ -15,6 +15,10 @@
 @import "bootstrap";
 @import "business-casual";
 
+body {
+    background: url('background/sch.jpg') no-repeat center center fixed;
+}
+
 .aligner {
   align-items: center;
   display: flex;
