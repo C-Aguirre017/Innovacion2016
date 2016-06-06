@@ -1,4 +1,4 @@
-function search() {
+function search(url) {
   $('.user-search').on('keyup', function() {
     if ($(this).val().length < 3) {
       $('.user-search-results tbody').empty();
@@ -9,7 +9,7 @@ function search() {
     $(this).val($(this).val().split('.').join(""));
 
     $.ajax({
-        url: 'find_file',
+        url: url,
         type: 'GET',
         data: {
           query: $(this).val()
