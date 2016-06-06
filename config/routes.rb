@@ -5,14 +5,16 @@ Rails.application.routes.draw do
   resources :users
 
   devise_scope :user do
-    get 'sign_in', to: 'devise/sessions#new'
-  end
+     get 'ingresar', to: 'devise/sessions#new'
+     get 'registrar', to: 'devise/registrations#new'
+   end
 
   root 'static_pages#home'
-
-  get '/home', to: 'static_pages#home'
+  get '/inicio', to: 'static_pages#home'
   get '/quienes_somos',  to: 'static_pages#who'
-  get '/search',  to: 'static_pages#search'
+  get '/busqueda',  to: 'static_pages#search'
+  get '/contacto', to: 'static_pages#contact'
+
   get '/find_file', to: 'users#find_file'
 
 end

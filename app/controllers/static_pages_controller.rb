@@ -9,4 +9,8 @@ class StaticPagesController < ApplicationController
   def search
     @users = User.limit(10)
   end
+
+  def contact
+  end
+
 end

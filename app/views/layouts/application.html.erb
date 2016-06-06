@@ -4,20 +4,16 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+
   </head>
   <body  class="container" data-spy="scroll" data-offset="0">
 
     <%= render 'shared/header' %>
 
-    <div class="col-md-10 col-md-offset-1 body-container">
-      <section class="content-header">
-        <h1><%= yield :header %></h1>
-      </section>
-
-      <section class="content">
-        <%= yield :content %>
-      </section>
-    </div>
+    <%= yield %>
 
     <%= render 'shared/footer' %>
   </body>
