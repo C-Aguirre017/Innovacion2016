@@ -1,0 +1,24 @@
+<table class="table table-hover">
+    <% if user.retire? %>
+      <% if user.retire.has_abilities? %>
+        <tbody class="aligner">
+          <% user.retire.abilities.each_with_index do |ability,i|%>
+          <tr>
+            <td>
+              <%= ability.name %>
+            </td>
+          </tr>
+
+          <% end %>
+        </tbody>
+      <% else %>
+        <p class="aligner">
+          El usuario no tiene habilidades
+        </p>
+      <% end %>
+    <% else %>
+      <p class="aligner">
+        El usuario no es un Jubilado
+      </p>
+    <% end %>
+</table>

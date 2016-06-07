@@ -1,44 +1,22 @@
 class RetiresController < ApplicationController
   before_action :set_retire, only: [:show, :edit, :update, :destroy]
-
-  # GET /retires
-  # GET /retires.json
-  def index
-    @retires = Retire.all
-  end
-
-  # GET /retires/1
-  # GET /retires/1.json
-  def show
-  end
-
-  # GET /retires/new
   def new
     @retire = Retire.new
   end
 
-  # GET /retires/1/edit
-  def edit
-  end
-
-  # POST /retires
-  # POST /retires.json
   def create
+    params[:retire][:user_id] = current_user.id
     @retire = Retire.new(retire_params)
 
     respond_to do |format|
       if @retire.save
-        format.html { redirect_to @retire, notice: 'Retire was successfully created.' }
-        format.json { render :show, status: :created, location: @retire }
+        format.html { redirect_to current_user, notice: 'Se ha añadido la información correctamente.' }
       else
-        format.html { render :new }
-        format.json { render json: @retire.errors, status: :unprocessable_entity }
+        format.html { redirect_to current_user }
       end
     end
   end
 
-  # PATCH/PUT /retires/1
-  # PATCH/PUT /retires/1.json
   def update
     respond_to do |format|
       if @retire.update(retire_params)
@@ -51,8 +29,6 @@ class RetiresController < ApplicationController
     end
   end
 
-  # DELETE /retires/1
-  # DELETE /retires/1.json
   def destroy
     @retire.destroy
     respond_to do |format|

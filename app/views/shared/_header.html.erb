@@ -42,7 +42,7 @@
         </li>
         <% if user_signed_in? %>
         <li>
-          <%= link_to "", contacto_path, class:"glyphicon glyphicon-user" %>
+          <%= link_to "", current_user, class:"glyphicon glyphicon-user" %>
         </li>
         <% end %>
       </ul>

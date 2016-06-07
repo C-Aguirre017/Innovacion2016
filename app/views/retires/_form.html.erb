@@ -1,25 +1,23 @@
-<%= form_for(@retire) do |f| %>
-  <% if @retire.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@retire.errors.count, "error") %> prohibited this retire from being saved:</h2>
+<div class="aligner">
+  <h2> Información Jubilado</h2>
+</div>
+<div class="col-md-4 col-md-offset-4 aligner">
+  <%= form_for(@retire) do |f| %>
 
-      <ul>
-      <% @retire.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= hidden_field_tag "retire[user_id]", value: current_user.id%>
 
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
+    <%= f.label :telephone, "Agregar Teléfono" %><br>
+    <%= f.text_field :telephone,
+                      class: "form-control",
+                      placeholder: "94505345",
+                      required: true %>
   </div>
-  <div class="field">
-    <%= f.label :telephone %><br>
-    <%= f.text_field :telephone %>
-  </div>
+
+  <br>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Añadir Información", class: "btn btn-primary" %>
   </div>
-<% end %>
+
+  <% end %>
+</div>

@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row col-md-12">
+    <div class="box">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <h3 class="aligner">Aptitudes</h3>
+        </div>
+        <div class="col-md-1">
+        </div>
+      </div>
+      <hr>
+      <br>
+      <div class="row ">
+        <div class="col-md-12 aligner">
+          <%= form_tag(get_ability_user_path(current_user), method: :post) do %>
+            <% @abilities.each_with_index do |ability, i| %>
+              <% name = "ability_#{ability.id}"%>
+              <% if current_user.retire.has_ability?(ability.id)%>
+                <%= check_box_tag(name,ability.id,true) %>
+              <% else %>
+                <%= check_box_tag(name,ability.id) %>
+              <% end %>
+              <%= label_tag(name, ability.name) %>
+              <br>
+            <% end %>
+
+            <br>
+            <div class="actions">
+              <%= submit_tag "Enviar", class: "btn btn-primary" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

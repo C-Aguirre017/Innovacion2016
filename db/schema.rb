@@ -13,6 +13,13 @@
 
 ActiveRecord::Schema.define(version: 20160601030417) do
 
+  create_table "abilities", force: :cascade do |t|
+    t.string   "category"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "applications", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "retire_id"
@@ -26,13 +33,13 @@ ActiveRecord::Schema.define(version: 20160601030417) do
   add_index "applications", ["user_id"], name: "index_applications_on_user_id"
 
   create_table "cvs", force: :cascade do |t|
-    t.integer  "hability_id"
+    t.integer  "ability_id"
     t.integer  "retire_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  add_index "cvs", ["hability_id"], name: "index_cvs_on_hability_id"
+  add_index "cvs", ["ability_id"], name: "index_cvs_on_ability_id"
   add_index "cvs", ["retire_id"], name: "index_cvs_on_retire_id"
 
   create_table "evaluations", force: :cascade do |t|
@@ -44,13 +51,6 @@ ActiveRecord::Schema.define(version: 20160601030417) do
 
   add_index "evaluations", ["application_id"], name: "index_evaluations_on_application_id"
   add_index "evaluations", ["user_id"], name: "index_evaluations_on_user_id"
-
-  create_table "habilities", force: :cascade do |t|
-    t.string   "category"
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "retires", force: :cascade do |t|
     t.integer  "user_id"

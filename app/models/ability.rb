@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: habilities
+# Table name: abilities
 #
 #  id         :integer          not null, primary key
 #  category   :string
@@ -9,12 +9,9 @@
 #  updated_at :datetime         not null
 #
 
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+class Ability < ActiveRecord::Base
 
-one:
-  category: MyString
-  name: MyString
+  has_many :cv, class_name: "Cv", foreign_key: "ability_id"
+  has_many :retires, through: :cv, source: "retire_id"
 
-two:
-  category: MyString
-  name: MyString
+end

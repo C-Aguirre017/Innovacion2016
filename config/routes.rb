@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
 
+
   devise_for :users
-  resources :retires
-  resources :users
+  resources :retires, only: [:new,:create]
+  resources :users do
+    member do
+      post 'get_ability', to: 'abilities#get_ability'
+      get 'habilidades', to: 'abilities#index'
+    end
+  end
 
   devise_scope :user do
      get 'ingresar', to: 'devise/sessions#new'
@@ -16,5 +22,4 @@ Rails.application.routes.draw do
   get '/contacto', to: 'static_pages#contact'
 
   get '/find_file', to: 'users#find_file'
-
 end

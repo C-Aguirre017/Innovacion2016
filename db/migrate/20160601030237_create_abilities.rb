@@ -1,6 +1,6 @@
-class CreateHabilities < ActiveRecord::Migration
+class CreateAbilities < ActiveRecord::Migration
   def change
-    create_table :habilities do |t|
+    create_table :abilities do |t|
       t.string :category
       t.string :name
 

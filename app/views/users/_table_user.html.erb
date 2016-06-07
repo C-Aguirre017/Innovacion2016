@@ -1,0 +1,79 @@
+<table class="table table-hover">
+  <tbody>
+
+    <tr>
+      <td>
+        Nombre
+      </td>
+      <td>
+        <%= user.name ? user.name : "Sin información" %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Apellido
+      </td>
+      <td>
+        <%= user.last_name ? user.last_name : "Sin información" %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Sexo
+      </td>
+      <td>
+        <%= user.sex ? user.sex : "Sin información" %>
+      </td>
+    </tr>
+    <% if @user.retire? %>
+    <tr>
+      <td>
+        Teléfono
+      </td>
+      <td>
+        <%= user.retire.telephone ? user.retire.telephone : "Sin información" %>
+      </td>
+    </tr>
+    <% end %>
+    <tr>
+      <td>
+        Estado
+      </td>
+      <td>
+        <%= user.state ? user.state : "Sin información" %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Cumpleaños
+      </td>
+      <td>
+        <%= user.birthday ? user.birthday.strftime("%d/%m/%Y") : "Sin información" %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Ciudad
+      </td>
+      <td>
+        <%= user.city ? user.city : "Sin información" %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Comunidad
+      </td>
+      <td>
+        <%= user.commune ? user.commune : "Sin información" %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Linkedin
+      </td>
+      <td>
+        <%= user.linkedin ? user.linkedin : "Sin información" %>
+      </td>
+    </tr>
+  </tbody>
+</table>
