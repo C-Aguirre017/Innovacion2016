@@ -1,0 +1,41 @@
+<% if user.get_followers.count > 0 %>
+  <table class="table table-hover text-center">
+    <thead>
+      <th class="text-center">
+        Nombre
+      </th>
+      <% if current_user.id == user.id %>
+        <th>
+          Solicitud Aceptada?
+        </th>
+        <th class="text-center">
+          Aceptar
+        </th>
+      <% end %>
+    </thead>
+    <tbody>
+      <% user.get_followers.each do |info| %>
+        <% retire = Retire.find_by(id: info.retire_id) %>
+       <tr>
+         <td class="text-center">
+           <%= link_to retire.user.full_name , user_path(retire.user.id) %>
+         </td>
+         <% if current_user.id == user.id %>
+           <td class="text-center">
+            <%= info.is_valid ? "Aceptada" : "Pendiente"%>
+           </td>
+           <td class="text-center">
+             <%= form_tag(borrar_solicitud_path(application_id: info.id), method: :post) do %>
+              <%= submit_tag "Dejar de Seguir", class: "btn btn-info" %>
+             <% end%>
+           </td>
+         <% end %>
+       </tr>
+    <% end%>
+    </tbody>
+  </table>
+<% else%>
+  <h5 class="aligner">
+    No se encuentra conectado con nadie
+  </h5>
+<% end%>

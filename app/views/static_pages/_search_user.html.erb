@@ -1,0 +1,45 @@
+<div class="box">
+  <div class="aligner">
+    <h3>
+      Busqueda de Personas por Nombre
+    </h3>
+  </div>
+  <hr>
+  <br>
+
+  <div class="aligner col-md-10 col-md-offset-1">
+
+    <div class="table-responsive">
+
+      <div class="input-group input-group-lg">
+        <span class="input-group-addon">
+          <i class="fa fa-search"></i>
+        </span>
+        <%= text_field_tag :user_search,
+                     nil,
+                     placeholder: 'Ingrese parte de su busqueda',
+                     class: 'form-control user-search' %>
+      </div>
+
+      <table class="table table-hover user-search-results hidden col-md-10 col-md-offset-1">
+        <thead>
+          <th>
+            Nombre
+          </th>
+          <th>
+            Algo
+          </th>
+          <th>
+            Acciones
+          </th>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+  search('<%= find_file_path %>');
+</script>

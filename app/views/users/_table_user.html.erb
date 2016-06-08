@@ -25,14 +25,18 @@
         <%= user.sex ? user.sex : "Sin información" %>
       </td>
     </tr>
-    <% if @user.retire? %>
+    <% if user.retire? %>
     <tr>
       <td>
         Teléfono
       </td>
       <td>
-        <%= user.retire.telephone ? user.retire.telephone : "Sin información" %>
+      <% if current_user.is_accepted?(user.id) %>
+          <%= user.retire.telephone ? user.retire.telephone : "Sin información" %>
+      <% else %>
+           Bloqueado
       </td>
+      <% end %>
     </tr>
     <% end %>
     <tr>

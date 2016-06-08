@@ -15,6 +15,9 @@ class Retire < ActiveRecord::Base
   has_many :cv, class_name: "Cv", foreign_key: "retire_id"
   has_many :abilities, through: :cv,  source: :ability
 
+  has_many :applications, class_name: "Application", foreign_key: "retire_id"
+  has_many :followers, through: :applications, source: :user
+
 
   def has_abilities?
     !abilities.nil?
@@ -23,4 +26,9 @@ class Retire < ActiveRecord::Base
   def has_ability?(ability_id)
     abilities.where(id: ability_id).count > 0
   end
+
+  def has_notifications?
+    applications.where(is_valid: false).count > 0
+  end
+
 end

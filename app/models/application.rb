@@ -14,4 +14,6 @@
 class Application < ActiveRecord::Base
   belongs_to :user
   belongs_to :retire
+
+  has_one :evaluation, class_name:"Evaluation", foreign_key: "application_id"
 end
