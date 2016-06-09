@@ -13,16 +13,17 @@
                       placeholder: "94505345",
                       required: true %>
   </div>
-
+  <br>
   <div class="field">
     <%= f.label :resume, "Resumen del Jubilado" %>
+    <br>
     <small>
       Será el resumen que se mostrará al público
     </small>
     <br>
-    <%= f.text_field :resume,
+    <%= f.text_area :resume,
                       class: "form-control",
-                      placeholder: "94505345",
+                      placeholder: "...",
                       required: true %>
   </div>
 

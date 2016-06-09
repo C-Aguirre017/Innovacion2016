@@ -7,23 +7,34 @@ class StaticPagesController < ApplicationController
   end
 
   def search
-    @users = User.limit(10)
-  end
+    @retires = []
+    query = params[:name_search]
+    if query && query.length >0
+      Retire.joins(:user).where('lower(name) LIKE ? OR lower(last_name) LIKE ?', "%#{query}%", "%#{query}%").each { |retire| @retires << retire }
+    end
 
-  def search_by_name
-    query = params[:query]
-    @retires = Retire.joins(:user).where('lower(name) LIKE ? OR lower(last_name) LIKE ?', "%#{query}%", "%#{query}%")
+    counter = 0
+    Ability.all.each_with_index do |ability,i|
+      aux = params[ability.name]
+      if aux
+        counter+=1
+      end
+    end
 
-    render search
-  end
+    string_by_ability = ''
+    Ability.all.each_with_index do |ability,i|
+      aux = params[ability.name]
+      if aux
+        counter -= 1
+        if counter.to_i == 0
+          string_by_ability += "lower(name) LIKE '#{ability.name}'"
+        else
+          string_by_ability += "lower(name) LIKE '#{ability.name}' OR "
+        end
+      end
+    end
+    Retire.joins(:abilities).where(string_by_ability).each { |retire| @retires << retire}
 
-  def search_by_ability
-    aux_string = ''
-    Ability.each { aux_string += ' lower(name) LIKE ? OR'}
-
-    @retires = Retire.joins(:abilities).where('', "%#{query}%", "%#{query}%")
-
-    render search
   end
 
   def contact
