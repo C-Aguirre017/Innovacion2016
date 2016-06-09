@@ -17,12 +17,13 @@ class StaticPagesController < ApplicationController
     render search
   end
 
-  def search_by_hability
+  def search_by_ability
     aux_string = ''
     Ability.each { aux_string += ' lower(name) LIKE ? OR'}
 
     @retires = Retire.joins(:abilities).where('', "%#{query}%", "%#{query}%")
 
+    render search
   end
 
   def contact

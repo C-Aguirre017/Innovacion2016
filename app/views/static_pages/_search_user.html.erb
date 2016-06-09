@@ -7,21 +7,27 @@
   <hr>
   <br>
 
-  <div class="aligner col-md-10 col-md-offset-1">
+  <div class="col-md-10 col-md-offset-1">
 
     <div class="table-responsive">
-
-      <div class="input-group input-group-lg">
-        <span class="input-group-addon">
-          <i class="fa fa-search"></i>
-        </span>
-        <%= text_field_tag :user_search,
-                     nil,
-                     placeholder: 'Ingrese parte de su busqueda',
-                     class: 'form-control user-search' %>
-      </div>
-
-      <table class="table table-hover user-search-results hidden col-md-10 col-md-offset-1">
+      <%= form_tag((current_user)) do %>
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon">
+            <i class="fa fa-search"></i>
+          </span>
+              <%= text_field_tag :user_search,
+                       nil,
+                       placeholder: 'Ingrese parte de su busqueda',
+                       class: 'form-control user-search' %>
+            <br>
+        </div>
+        <br>
+        <div class="actions aligner">
+          <%= submit_tag "Actualizar", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+      <br>
+      <table class="table table-hover user-search-results hidden  col-md-10 col-md-offset-1">
         <thead>
           <th>
             Nombre
@@ -34,8 +40,10 @@
           </th>
         </thead>
         <tbody>
-          <% @retires.each_with_index do |retire| %>
+          <% if @retires %>
+            <% @retires.each_with_index do |retire| %>
 
+            <% end %>
           <% end %>
         </tbody>
       </table>
@@ -45,8 +53,5 @@
 
 
 <script type="text/javascript">
-  search('<%= find_file_path %>');
-
-
-
+  name_search('<%= find_file_path %>');
 </script>

@@ -1,4 +1,4 @@
-function search(url) {
+function ability_search(url) {
   $('.ability-search').on('keyup', function() {
     if ($(this).val().length < 3) {
       $('.ability-search-results tbody').empty();

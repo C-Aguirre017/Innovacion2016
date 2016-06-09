@@ -1,4 +1,4 @@
-function search(url) {
+function name_search(url) {
   $('.user-search').on('keyup', function() {
     if ($(this).val().length < 3) {
       $('.user-search-results tbody').empty();

@@ -28,6 +28,9 @@ Rails.application.routes.draw do
   get '/contacto', to: 'static_pages#contact'
   post '/aceptar_solicitud', to: 'users#toggle_notification'
   post '/borrar_solicitud', to: 'users#unfollow_user'
+  get '/busqueda_por_nombre', to: 'static_pages#search_by_name'
+  get '/busqueda_por_habilidad', to: 'static_pages#search_by_ability'
+
 
   get '/find_file', to: 'users#find_file'
 end
