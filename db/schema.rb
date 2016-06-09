@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160608051041) do
+ActiveRecord::Schema.define(version: 20160609213715) do
 
   create_table "abilities", force: :cascade do |t|
     t.string   "category"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20160608051041) do
     t.string   "telephone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text     "resume"
   end
 
   add_index "retires", ["user_id"], name: "index_retires_on_user_id"

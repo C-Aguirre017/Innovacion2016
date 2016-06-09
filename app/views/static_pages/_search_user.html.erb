@@ -33,7 +33,11 @@
             Acciones
           </th>
         </thead>
-        <tbody></tbody>
+        <tbody>
+          <% @retires.each_with_index do |retire| %>
+
+          <% end %>
+        </tbody>
       </table>
     </div>
   </div>
@@ -42,4 +46,7 @@
 
 <script type="text/javascript">
   search('<%= find_file_path %>');
+
+
+
 </script>

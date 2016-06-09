@@ -14,6 +14,18 @@
                       required: true %>
   </div>
 
+  <div class="field">
+    <%= f.label :resume, "Resumen del Jubilado" %>
+    <small>
+      Será el resumen que se mostrará al público
+    </small>
+    <br>
+    <%= f.text_field :resume,
+                      class: "form-control",
+                      placeholder: "94505345",
+                      required: true %>
+  </div>
+
   <br>
   <div class="actions">
     <%= f.submit "Añadir Información", class: "btn btn-primary" %>

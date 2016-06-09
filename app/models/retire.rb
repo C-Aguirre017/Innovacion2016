@@ -7,6 +7,7 @@
 #  telephone  :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  resume     :text
 #
 
 class Retire < ActiveRecord::Base

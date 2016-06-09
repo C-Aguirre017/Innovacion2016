@@ -45,6 +45,6 @@ class RetiresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def retire_params
-      params.require(:retire).permit(:user_id, :telephone)
+      params.require(:retire).permit(:user_id, :telephone,:resume)
     end
 end
