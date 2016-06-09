@@ -1,60 +1,69 @@
 <div class="container">
-    <div class="row">
-        <div class="box">
-            <div class="col-lg-12 text-center">
-                <div id="carousel-example-generic" class="carousel slide">
-                    <ol class="carousel-indicators hidden-xs">
-                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                    </ol>
+  <div class="row">
+    <div class="box">
+      <div class="col-lg-12 text-center">
+        <div id="carousel-example-generic" class="carousel slide">
+          <ol class="carousel-indicators hidden-xs">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          </ol>
 
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            <%= image_tag("slide-1.jpg", class: "img-responsive img-full") %>
-                        </div>
-                        <div class="item">
-                            <%= image_tag "slide-2.jpg",class: "img-responsive img-full" %>
-                        </div>
-                        <div class="item">
-                            <%= image_tag "slide-3.jpg",class: "img-responsive img-full" %>
-                        </div>
-                    </div>
-
-                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                        <span class="icon-prev"></span>
-                    </a>
-                    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                        <span class="icon-next"></span>
-                    </a>
-                </div>
-                <h2 class="brand-before">
-                    <small>Bienvenido</small>
-                </h2>
-                <h1 class="brand-name">Business Casual</h1>
-                <hr class="tagline-divider">
+          <div class="carousel-inner">
+            <div class="item active">
+              <%= image_tag("slide-1.png", class: "img-responsive img-full") %>
             </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="box">
-            <div class="col-lg-12">
-                <hr>
-                <h2 class="intro-text text-center">Build a website
-                    <strong>worth visiting</strong>
-                </h2>
-                <hr class="visible-xs">
-                <p>Texto 1 </p>
-                <p>A huge thanks to <a href="http://join.deathtothestockphoto.com/" target="_blank">Death to the Stock Photo</a> for allowing us to use the beautiful photos that make this template really come to life. When using this template, make sure your photos are decent. Also make sure that the file size on your photos is kept to a minumum to keep load times to a minimum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            <div class="item">
+              <%= image_tag "slide-2.png",class: "img-responsive img-full" %>
             </div>
+            <div class="item">
+              <%= image_tag "slide-3.png",class: "img-responsive img-full" %>
+            </div>
+          </div>
+
+          <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+            <span class="icon-prev"></span>
+          </a>
+          <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+            <span class="icon-next"></span>
+          </a>
         </div>
+        <h2 class="brand-before">
+          <small>Bienvenido</small>
+        </h2>
+        <h1 class="brand-name">Business Casual</h1>
+        <hr class="tagline-divider">
+      </div>
     </div>
+  </div>
+
+  <div class="row">
+    <div class="box">
+      <div class="col-lg-12">
+        <hr>
+        <h2 class="intro-text text-center">Jublink
+          <strong></strong>
+        </h2>
+        <hr class="visible-xs aligner">
+        <p>
+          15 de Junio es la fecha en que comienza el período de clasificación para optar por el dinero necesario para hacer nuestro proyecto realidad. Hacemos un llamado a todos nuestros usuarios a que corran la voz y nos ayuden a hacer crecer esta página.
+          ¡Mientras más grande sea nuestra comunidad más opciones tendremos de ganar!
+        </p>
+        <p>
+          Un cordial agradecimiento a quienes ya confían en nosotros
+
+        </p>
+        <p>
+          Equipo Jublink
+
+        </p>
+      </div>
+    </div>
+  </div>
 
 </div>
 <script>
-$('.carousel').carousel({
+  $('.carousel').carousel({
     interval: 5000 //changes the speed
-})
+  })
 </script>
